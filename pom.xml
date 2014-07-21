@@ -12,6 +12,7 @@
         <org.springframework.version>4.0.6.RELEASE</org.springframework.version>
         <org.spring.data.version>1.6.1.RELEASE</org.spring.data.version>
         <org.eclipselink.version>2.5.0</org.eclipselink.version>
+        <postgresql.version>9.2-1003-jdbc4</postgresql.version>
     </properties>
 
     <dependencies>
@@ -39,6 +40,11 @@
             <groupId>org.eclipse.persistence</groupId>
             <artifactId>eclipselink</artifactId>
             <version>${org.eclipselink.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>${postgresql.version}</version>
         </dependency>
       <!--  <dependency>
             <groupId>org.hibernate</groupId>

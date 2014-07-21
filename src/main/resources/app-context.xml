@@ -17,10 +17,10 @@
         <property name="password" value="password"/>
     </bean>-->
 
-    <jdbc:embedded-database id="dataSource" type="H2">
-<!--        <jdbc:script location="classpath:schema.sql"/>
-        <jdbc:script location="classpath:test-data.sql"/>-->
-    </jdbc:embedded-database>
+<!--    <jdbc:embedded-database id="dataSource" type="H2">
+&lt;!&ndash;        <jdbc:script location="classpath:schema.sql"/>
+        <jdbc:script location="classpath:test-data.sql"/>&ndash;&gt;
+    </jdbc:embedded-database>-->
 
   <!--  <bean id="h2Server" class="org.h2.tools.Server" factory-method="createTcpServer" init-method="start" destroy-method="stop" depends-on="h2WebServer">
         <constructor-arg value="-tcp,-tcpAllowOthers,-tcpPort,9092"/>
@@ -28,6 +28,13 @@
     <bean id="h2WebServer" class="org.h2.tools.Server" factory-method="createWebServer" init-method="start" destroy-method="stop">
         <constructor-arg value="-web,-webAllowOthers,-webPort,8082"/>
     </bean>-->
+
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="org.postgresql.Driver"/>
+        <property name="url" value="jdbc:postgresql://localhost:5432/tom"/>
+        <property name="username" value="tom"/>
+        <property name="password" value=""/>
+    </bean>
 
     <bean id="jpaVendorAdapter" class="org.springframework.orm.jpa.vendor.EclipseLinkJpaVendorAdapter">
         <property name="showSql" value="true"/>

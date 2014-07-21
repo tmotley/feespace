@@ -23,7 +23,7 @@ public class Client {
     @Column(name = "name")
     private String name;
 
-    @Column(name = "org", insertable=false, updatable=false)
+    @Transient
     private String org;
 
     public Client() {
@@ -50,11 +50,5 @@ public class Client {
         this.name = name;
     }
 
-    public String getOrg() {
-        return org;
-    }
 
-    public void setOrg(String org) {
-        this.org = org;
-    }
 }
